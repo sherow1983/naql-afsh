@@ -9,6 +9,9 @@
     <!-- أيقونة المتصفح (Favicon) -->
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/713/713311.png" type="image/png">
 
+    <!-- ملف التطبيق (Manifest) -->
+    <link rel="manifest" href="manifest.json">
+
     <!-- تحسين مظهر الرابط عند المشاركة على واتساب (Open Graph) -->
     <meta property="og:title" content="الأمانة - أفضل شركة نقل عفش بالسعودية">
     <meta property="og:description" content="احصل على خصم 20% لفترة محدودة! نقل عفش، فك وتركيب، تغليف، وتخزين أثاث في الرياض وجدة والدمام.">
@@ -21,23 +24,23 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
     
-    <!-- مكتبة الأيقونات (FontAwesome) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- تسريع تحميل صورة الخلفية الرئيسية (LCP) -->
-    <link rel="preload" as="image" href="galleria/بانر شركة نقل عفش.webp">
+    <!-- مكتبة الأيقونات (FontAwesome) - تحميل غير متزامن لتحسين السرعة -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
 
     <!-- ربط ملف التنسيق -->
     <link rel="stylesheet" href="style.css">
 
     <!-- Schema.org JSON-LD لتعريف الخدمة لمحركات البحث -->
     <script type="application/ld+json">
+    [
     {
       "@context": "https://schema.org",
       "@type": "MovingCompany",
       "name": "شركة الأمانة لنقل العفش",
       "image": "https://images.unsplash.com/photo-1600518464441-9154a4dea21b?auto=format&fit=crop&w=1500&q=80",
       "description": "الأمانة هي الشركة الرائدة في خدمات نقل العفش بالسعودية. نقدم خدمات نقل الأثاث، الفك والتركيب، التغليف، والتخزين بالرياض وجدة والدمام.",
+      "url": "https://sherow1982.github.io/naql-afsh/index.html",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "شارع الملك فهد",
@@ -51,6 +54,7 @@
         "latitude": 24.7136,
         "longitude": 46.6753
       },
+      "areaServed": ["Riyadh", "Jeddah", "Dammam", "Mecca", "Medina"],
       "telephone": "+201110760081",
       "priceRange": "$$",
       "openingHoursSpecification": {
@@ -66,8 +70,44 @@
         ],
         "opens": "00:00",
         "closes": "23:59"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "1254"
       }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "هل تقومون بفك وتركيب غرف النوم والمطابخ؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "نعم، لدينا نجارين متخصصين لفك وتركيب جميع أنواع غرف النوم (ايكيا، وطني، صيني) والمطابخ والستائر."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل توفرون كراتين وتغليف للعفش؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "نعم، نوفر جميع مواد التغليف من كراتين مقوى، بلاستيك فقاعي، ونايلون لضمان سلامة المنقولات."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل يوجد ضمان على النقل؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "نعم، نقدم ضمان شامل ضد الكسر أو الخدش أثناء عملية النقل لضمان حق العميل."
+          }
+        }
+      ]
     }
+    ]
     </script>
 </head>
 <body>
@@ -75,11 +115,11 @@
     <!-- نافذة منبثقة (Pop-up) -->
     <div id="note-popup" class="popup-overlay">
         <div class="popup-content">
-            <span class="close-btn" id="closePopupBtn">&times;</span>
+            <span class="close-btn" id="closePopupBtn" aria-label="إغلاق النافذة">&times;</span>
             <h2>⚠️ ملحوظة هامة</h2>
             <p>هذه صفحة تجريبية لشركة نقل عفش بالسعودية.</p>
             <p>اذا اردت عمل صفحة لشركتك برجاء التواصل معنا واتساب على:</p>
-            <a href="https://wa.me/201110760081" target="_blank" class="popup-btn">
+            <a href="https://wa.me/201110760081" target="_blank" rel="noopener noreferrer" class="popup-btn">
                 <i class="fab fa-whatsapp"></i> +201110760081
             </a>
         </div>
@@ -105,7 +145,7 @@
                     <li><a href="#contact" onclick="toggleMenu()">اتصل بنا</a></li>
                 </ul>
             </nav>
-            <div class="menu-toggle" onclick="toggleMenu()">
+            <div class="menu-toggle" onclick="toggleMenu()" aria-label="فتح القائمة">
                 <i class="fas fa-bars"></i>
             </div>
         </div>
@@ -113,6 +153,8 @@
 
     <!-- القسم الرئيسي (Hero Section) -->
     <section id="home" class="hero">
+        <!-- صورة الخلفية كعنصر مباشر لتحسين سرعة LCP -->
+        <img src="galleria/بانر شركة نقل عفش.webp" alt="شركة نقل عفش" class="hero-bg-img" fetchpriority="high" width="1920" height="1080">
         <div class="overlay"></div>
         <div class="hero-text fade-in zoom">
             <h1>أفضل شركة نقل عفش وتغليف أثاث بالسعودية</h1>
@@ -153,15 +195,15 @@
         <div class="comparison-media">
             <div class="cmp-video">
                 <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/sSpSnIdSKFM" title="فيديو تعريفي" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/sSpSnIdSKFM" title="فيديو تعريفي عن خدمات النقل" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" width="560" height="315"></iframe>
                 </div>
             </div>
             <div class="cmp-images-row">
                 <div class="cmp-image shine-effect">
-                    <img src="galleria/لماذا تختار صفحة الهبوط بديل لخرائط جوجل.webp" alt="تحليلات ومقارنة الأداء" loading="lazy">
+                    <img src="galleria/لماذا تختار صفحة الهبوط بديل لخرائط جوجل.webp" alt="تحليلات ومقارنة الأداء" loading="lazy" width="600" height="400">
                 </div>
                 <div class="cmp-image shine-effect">
-                    <img src="galleria/لماذا تختار صفحة الهبوط بديل لخرائط جوجل-2.webp" alt="نمو الأعمال والنتائج" loading="lazy">
+                    <img src="galleria/لماذا تختار صفحة الهبوط بديل لخرائط جوجل-2.webp" alt="نمو الأعمال والنتائج" loading="lazy" width="600" height="400">
                 </div>
             </div>
         </div>
@@ -261,17 +303,17 @@
         <h2 class="section-title">معرض أعمالنا</h2>
         <p style="text-align: center; margin-bottom: 30px; color: #666;">صور حقيقية من عمليات النقل والتغليف التي قمنا بها لعملائنا الكرام.</p>
         <div class="gallery-wrapper">
-            <button class="gallery-nav-btn prev-btn" onclick="scrollGallery('prev')"><i class="fas fa-chevron-right"></i></button>
+            <button class="gallery-nav-btn prev-btn" onclick="scrollGallery('prev')" aria-label="الصورة السابقة"><i class="fas fa-chevron-right"></i></button>
             <div class="gallery-grid" id="galleryGrid">
                 <!-- الصور سيتم إضافتها هنا تلقائياً بواسطة الجافاسكريبت -->
             </div>
-            <button class="gallery-nav-btn next-btn" onclick="scrollGallery('next')"><i class="fas fa-chevron-left"></i></button>
+            <button class="gallery-nav-btn next-btn" onclick="scrollGallery('next')" aria-label="الصورة التالية"><i class="fas fa-chevron-left"></i></button>
         </div>
     </section>
 
     <!-- بنر إضافي -->
     <div class="container fade-in">
-        <img src="galleria/بانر شركة نقل عفش.webp" alt="الأمانة لنقل العفش" class="promo-banner" loading="lazy">
+        <img src="galleria/بانر شركة نقل عفش.webp" alt="الأمانة لنقل العفش" class="promo-banner" loading="lazy" width="1200" height="400">
     </div>
 
     <!-- قسم لماذا تختارنا -->
@@ -354,7 +396,7 @@
         <h2 class="section-title">مناطق تغطية خدماتنا في المملكة</h2>
         <p style="text-align: center; margin-bottom: 20px; color: #666;">نقدم خدماتنا في جميع أحياء الرياض، ونتوسع لنغطي المدن الرئيسية (جدة، الدمام، مكة المكرمة) قريباً.</p>
         <div class="coverage-map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14863584.606248282!2d35.61746250758376!3d24.53632565606365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15e7b33fe7952a41%3A0x5960504bc21ab69b!2sSaudi%20Arabia!5e0!3m2!1sar!2ssa!4v1709636000000!5m2!1sar!2ssa" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14863584.606248282!2d35.61746250758376!3d24.53632565606365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15e7b33fe7952a41%3A0x5960504bc21ab69b!2sSaudi%20Arabia!5e0!3m2!1sar!2ssa!4v1709636000000!5m2!1sar!2ssa" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="خريطة تغطية الخدمة في السعودية"></iframe>
         </div>
     </section>
 
@@ -384,8 +426,11 @@
             <h2 class="section-title">احجز موعدك الآن</h2>
             <p>املأ البيانات وسيتم تحويلك للواتساب لتأكيد الحجز فوراً</p>
             <form id="whatsappForm">
+                <label for="name" class="sr-only">الاسم الكريم</label>
                 <input type="text" id="name" placeholder="الاسم الكريم" required>
+                <label for="phone" class="sr-only">رقم الجوال</label>
                 <input type="tel" id="phone" placeholder="رقم الجوال" required>
+                <label for="city" class="sr-only">اختر المدينة</label>
                 <select id="city" required>
                     <option value="" disabled selected>اختر المدينة</option>
                     <option value="الرياض">الرياض</option>
@@ -395,6 +440,7 @@
                     <option value="المدينة المنورة">المدينة المنورة</option>
                     <option value="مدينة أخرى">مدينة أخرى</option>
                 </select>
+                <label for="service" class="sr-only">اختر الخدمة المطلوبة</label>
                 <select id="service" required>
                     <option value="" disabled selected>اختر الخدمة المطلوبة</option>
                     <option value="نقل عفش">نقل عفش</option>
@@ -447,7 +493,7 @@
             </div>
             <!-- خريطة جوجل -->
             <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d231998.6743666224!2d46.54233774880526!3d24.724997780072793!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f03890d489399%3A0xba974d1c98e79fd5!2sRiyadh%20Saudi%20Arabia!5e0!3m2!1sen!2ssa!4v1709635648521!5m2!1sen!2ssa" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d231998.6743666224!2d46.54233774880526!3d24.724997780072793!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f03890d489399%3A0xba974d1c98e79fd5!2sRiyadh%20Saudi%20Arabia!5e0!3m2!1sen!2ssa!4v1709635648521!5m2!1sen!2ssa" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="موقع الشركة على الخريطة"></iframe>
             </div>
 
             <div class="copyright">
@@ -462,7 +508,7 @@
     </footer>
 
     <!-- زر واتساب العائم -->
-    <a href="https://wa.me/201110760081" class="float-whatsapp" target="_blank">
+    <a href="javascript:void(0)" onclick="sendHeroWhatsapp()" class="float-whatsapp" aria-label="تواصل عبر واتساب">
         <i class="fab fa-whatsapp my-float"></i>
     </a>
 
@@ -481,7 +527,7 @@
         <a href="tel:+201110760081" class="sticky-btn call-btn">
             <i class="fas fa-phone-alt"></i> اتصل الآن
         </a>
-        <a href="https://wa.me/201110760081" class="sticky-btn whatsapp-btn">
+        <a href="javascript:void(0)" onclick="sendHeroWhatsapp()" class="sticky-btn whatsapp-btn">
             <i class="fab fa-whatsapp"></i> واتساب
         </a>
     </div>
@@ -547,6 +593,12 @@
             var city = document.getElementById('city').value;
             var service = document.getElementById('service').value;
             
+            // التحقق من صحة رقم الجوال (يجب أن يكون أرقاماً فقط)
+            if (phone.length < 9 || isNaN(phone)) {
+                alert("الرجاء إدخال رقم جوال صحيح");
+                return;
+            }
+
             // تجهيز الرسالة
             var message = "السلام عليكم، أرغب بحجز موعد:%0a" +
                           "👤 الاسم: " + name + "%0a" +
@@ -564,6 +616,13 @@
             var companyName = "الأمانة لنقل العفش";
             var now = new Date();
             var dateTime = now.toLocaleDateString('ar-SA') + ' - ' + now.toLocaleTimeString('ar-SA');
+            var message = "👋 السلام عليكم، أرغب في الاستفسار عن خدمات نقل العفش.%0a%0a" +
+                          "📌 *فضلاً، زودنا بالبيانات التالية لخدمتك بشكل أسرع:*%0a" +
+                          "▪️ *الاسم الكريم:* ....................%0a" +
+                          "▪️ *المدينة والحي:* ....................%0a" +
+                          "▪️ *نوع الخدمة (نقل/فك/تغليف):* ....................%0a" +
+                          "▪️ *الموعد المقترح:* ....................%0a%0a" +
+                          "شكرًا لكم 🌹";
 
             // طلب البيانات من المستخدم
             var city = prompt("الرجاء كتابة اسم مدينتك:");
@@ -578,6 +637,8 @@
                 var whatsappUrl = "https://wa.me/201110760081?text=" + message;
                 window.open(whatsappUrl, '_blank');
             }
+            var whatsappUrl = "https://wa.me/201110760081?text=" + message;
+            window.open(whatsappUrl, '_blank');
         }
 
         // --- 2. كود العداد التنازلي الذكي (يحفظ الوقت) ---
@@ -686,6 +747,8 @@
             img.src = `galleria/${i}.webp`;
             img.alt = `صورة من أعمالنا رقم ${i}`;
             img.loading = 'lazy';
+            img.width = 800; // أبعاد تقديرية لمنع اهتزاز الصفحة
+            img.height = 600;
 
             // إخفاء العنصر إذا لم يتم تحميل الصورة (لأنها غير موجودة)
             img.onerror = function() {

@@ -1,3 +1,13 @@
 User-agent: *
 Allow: /
+
+# Disallow crawling of specific file types to save crawl budget
+Disallow: /*.css$
+Disallow: /*.js$
+Disallow: /*.json$
+
+# Allow Googlebot-Image to crawl images
+User-agent: Googlebot-Image
+Allow: /galleria/
+
 Sitemap: https://sherow1982.github.io/naql-afsh/sitemap.xml

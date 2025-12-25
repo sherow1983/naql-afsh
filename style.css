@@ -37,6 +37,19 @@ a { text-decoration: none; }
 
 img { max-width: 100%; height: auto; } /* جعل الصور متجاوبة */
 
+/* كلاس لإخفاء العناصر بصرياً فقط (لتحسين الوصول) */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
 /* نافذة منبثقة (Pop-up) */
 .popup-overlay {
     position: fixed;
@@ -143,9 +156,6 @@ nav a:hover { color: var(--primary-color); }
 
 /* Hero Section */
 .hero {
-    background-image: url('galleria/بانر شركة نقل عفش.webp');
-    background-size: cover;
-    background-position: center;
     min-height: 80vh; /* استخدام min-height بدلاً من height لمنع قص النص */
     height: auto;
     padding: 100px 0; /* مسافة علوية وسفلية لراحة النص */
@@ -155,17 +165,29 @@ nav a:hover { color: var(--primary-color); }
     justify-content: center;
     text-align: center;
     color: #fff;
+    overflow: hidden;
+}
+
+.hero-bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
 }
 
 .overlay {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
     background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)); /* تدرج لوني أكثر احترافية */
+    z-index: 1;
 }
 
 .hero-text {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     padding: 20px;
     max-width: 900px; /* تحديد العرض لتركيز القراءة */
     margin: 0 auto;
