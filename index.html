@@ -118,7 +118,7 @@
             <h1>أفضل شركة نقل عفش وتغليف أثاث بالسعودية</h1>
             <p>خدمات نقل عفش احترافية، فك وتركيب غرف النوم والمطابخ، تغليف آمن، ونقل بسيارات مجهزة في الرياض، جدة، والدمام.</p>
             <div class="cta-buttons">
-                <a href="https://wa.me/201110760081" class="btn btn-whatsapp">
+                <a href="javascript:void(0)" onclick="sendHeroWhatsapp()" class="btn btn-whatsapp">
                     <i class="fab fa-whatsapp"></i> احجز الآن واتساب
                 </a>
                 <a href="tel:+201110760081" class="btn btn-call">
@@ -386,6 +386,15 @@
             <form id="whatsappForm">
                 <input type="text" id="name" placeholder="الاسم الكريم" required>
                 <input type="tel" id="phone" placeholder="رقم الجوال" required>
+                <select id="city" required>
+                    <option value="" disabled selected>اختر المدينة</option>
+                    <option value="الرياض">الرياض</option>
+                    <option value="جدة">جدة</option>
+                    <option value="الدمام">الدمام</option>
+                    <option value="مكة المكرمة">مكة المكرمة</option>
+                    <option value="المدينة المنورة">المدينة المنورة</option>
+                    <option value="مدينة أخرى">مدينة أخرى</option>
+                </select>
                 <select id="service" required>
                     <option value="" disabled selected>اختر الخدمة المطلوبة</option>
                     <option value="نقل عفش">نقل عفش</option>
@@ -535,18 +544,41 @@
             
             var name = document.getElementById('name').value;
             var phone = document.getElementById('phone').value;
+            var city = document.getElementById('city').value;
             var service = document.getElementById('service').value;
             
             // تجهيز الرسالة
             var message = "السلام عليكم، أرغب بحجز موعد:%0a" +
                           "👤 الاسم: " + name + "%0a" +
                           "📱 الجوال: " + phone + "%0a" +
+                          "🏙️ المدينة: " + city + "%0a" +
                           "🧹 الخدمة: " + service;
             
             // فتح واتساب
             var whatsappUrl = "https://wa.me/201110760081?text=" + message;
             window.open(whatsappUrl, '_blank');
         });
+
+        // --- 9. كود زر واتساب الهيرو (العلوي) ---
+        function sendHeroWhatsapp() {
+            var companyName = "الأمانة لنقل العفش";
+            var now = new Date();
+            var dateTime = now.toLocaleDateString('ar-SA') + ' - ' + now.toLocaleTimeString('ar-SA');
+
+            // طلب البيانات من المستخدم
+            var city = prompt("الرجاء كتابة اسم مدينتك:");
+            var phone = prompt("الرجاء كتابة رقم جوالك للتواصل:");
+
+            if (city && phone) {
+                var message = "السلام عليكم، اذا سمحت اريد طلب خدمة نقل عفش من شركة *" + companyName + "*%0a" +
+                              "🏙️ في مدينة: " + city + "%0a" +
+                              "📱 رقم جوالي: " + phone + "%0a" +
+                              "⏰ وقت الطلب: " + dateTime;
+
+                var whatsappUrl = "https://wa.me/201110760081?text=" + message;
+                window.open(whatsappUrl, '_blank');
+            }
+        }
 
         // --- 2. كود العداد التنازلي الذكي (يحفظ الوقت) ---
         let targetDate = localStorage.getItem('targetDate');
