@@ -6,7 +6,8 @@
     <title>الشروط والأحكام - الأمانة لنقل العفش</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
 </head>
 <body>
     <header>
@@ -26,9 +27,9 @@
                     <li><a href="index.html#contact">اتصل بنا</a></li>
                 </ul>
             </nav>
-            <div class="menu-toggle" onclick="toggleMenu()">
+            <button class="menu-toggle" onclick="toggleMenu()" aria-label="فتح القائمة">
                 <i class="fas fa-bars"></i>
-            </div>
+            </button>
         </div>
     </header>
 

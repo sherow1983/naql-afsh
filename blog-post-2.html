@@ -7,7 +7,8 @@
     <meta name="description" content="دليلك لاختيار شركة نقل عفش موثوقة في الرياض. تعرف على المعايير الهامة مثل الضمان، العمالة، والسيارات المجهزة.">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
 </head>
 <body>
     <header>
@@ -25,9 +26,9 @@
                     <li><a href="index.html#contact">اتصل بنا</a></li>
                 </ul>
             </nav>
-            <div class="menu-toggle" onclick="toggleMenu()">
+            <button class="menu-toggle" onclick="toggleMenu()" aria-label="فتح القائمة">
                 <i class="fas fa-bars"></i>
-            </div>
+            </button>
         </div>
     </header>
 
@@ -66,9 +67,9 @@
         <div class="share-buttons">
             <h3>مشاركة المقال:</h3>
             <div class="share-links">
-                <a href="javascript:void(0)" onclick="shareArticle('facebook')" class="share-btn share-facebook" title="مشاركة على فيسبوك"><i class="fab fa-facebook-f"></i></a>
-                <a href="javascript:void(0)" onclick="shareArticle('twitter')" class="share-btn share-twitter" title="مشاركة على تويتر"><i class="fab fa-twitter"></i></a>
-                <a href="javascript:void(0)" onclick="shareArticle('whatsapp')" class="share-btn share-whatsapp" title="مشاركة على واتساب"><i class="fab fa-whatsapp"></i></a>
+                <button onclick="shareArticle('facebook')" class="share-btn share-facebook" title="مشاركة على فيسبوك"><i class="fab fa-facebook-f"></i></button>
+                <button onclick="shareArticle('twitter')" class="share-btn share-twitter" title="مشاركة على تويتر"><i class="fab fa-twitter"></i></button>
+                <button onclick="shareArticle('whatsapp')" class="share-btn share-whatsapp" title="مشاركة على واتساب"><i class="fab fa-whatsapp"></i></button>
             </div>
         </div>
 

@@ -1,9 +1,9 @@
 /* إعدادات عامة */
 :root {
-    --primary-color: #00a8cc; /* أزرق سماوي */
+    --primary-color: #006d85; /* أزرق داكن للتباين */
     --dark-blue: #0c4b6e;
-    --whatsapp-color: #25D366;
-    --text-color: #333;
+    --whatsapp-color: #128c7e; /* واتساب داكن للتباين */
+    --text-color: #222;
     --bg-light: #f9f9f9;
 }
 
@@ -104,6 +104,8 @@ img { max-width: 100%; height: auto; } /* جعل الصور متجاوبة */
     position: absolute;
     top: 15px; left: 25px; /* زر الإغلاق في الزاوية */
     font-size: 4rem; color: #ff0000;
+    background: transparent;
+    border: none;
     cursor: pointer; line-height: 0.6;
 }
 .close-btn:hover { transform: scale(1.2); }
@@ -151,6 +153,8 @@ nav a:hover { color: var(--primary-color); }
     display: none;
     font-size: 1.8rem;
     cursor: pointer;
+    background: transparent;
+    border: none;
     color: var(--dark-blue);
 }
 
@@ -260,6 +264,8 @@ nav a:hover { color: var(--primary-color); }
     font-weight: bold;
     color: #fff;
     transition: transform 0.2s;
+    border: none;
+    cursor: pointer;
 }
 
 .btn:hover { transform: scale(1.05); }
@@ -530,7 +536,7 @@ nav a:hover { color: var(--primary-color); }
     padding-top: 40px; /* مسافة إضافية للنجوم */
 }
 .testimonial-card .stars { margin-bottom: 15px; font-size: 1.2rem; }
-.testimonial-card h4 { margin-top: 15px; color: var(--dark-blue); font-size: 0.9rem; opacity: 0.8; }
+.testimonial-card h3 { margin-top: 15px; color: var(--dark-blue); font-size: 0.9rem; opacity: 0.8; }
 
 /* شريط تقييمات جوجل */
 .google-reviews-container {
@@ -598,6 +604,7 @@ nav a:hover { color: var(--primary-color); }
     align-items: center;
     justify-content: center;
     gap: 8px;
+    text-decoration: none;
 }
 .call-btn { background-color: var(--primary-color); animation: pulse 2s infinite; }
 .whatsapp-btn { background-color: #25D366; }
@@ -949,6 +956,8 @@ footer {
     font-size: 1.2rem;
     transition: transform 0.3s;
     cursor: pointer;
+    border: none;
+    outline: none;
 }
 .share-btn:hover { transform: translateY(-3px); }
 .share-facebook { background-color: #3b5998; }
